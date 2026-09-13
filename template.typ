@@ -10,6 +10,7 @@
 #let char_width = 4.8mm
 #let char_width_over_2 = char_width / 2;
 #let char_width_over_4 = char_width / 4;
+#let char_width_over_6 = char_width / 6;
 #let char_width_over_8 = char_width / 8;
 #let char_width_over_12 = char_width / 12;
 #let char_width_over_16 = char_width / 16;
@@ -19,6 +20,7 @@
 
 #let space_over_2 = h(char_width_over_2, weak: true)
 #let space_over_4 = h(char_width_over_4, weak: true)
+#let space_over_6 = h(char_width_over_6, weak: true)
 #let space_over_8 = h(char_width_over_8, weak: true)
 #let space_over_12 = h(char_width_over_12, weak: true)
 #let space_over_16 = h(char_width_over_16, weak: true)
@@ -269,5 +271,7 @@
 #let multinom(n, ..k) = $binom(#n, #k.pos().join("," + space_over_4))$
 
 #let span(..vectors) = $upright("span")(#vectors.pos().join("," + space_over_4))$
-#let rank(matrix) = $upright("rank")(matrix)$
+#let nullspace(f) = $upright("null") #space_over_6 #f$
+#let rangespace(f) = $upright("range") #space_over_6 #f$
+#let rank(matrix) = $upright("rank") #space_over_6 #matrix$
 #let iprod(v0, v1) = $lr(chevron #v0, #v1 chevron.r)$
