@@ -275,3 +275,5 @@
 #let rangespace(f) = $upright("range") #space_over_6 #f$
 #let rank(matrix) = $upright("rank") #space_over_6 #matrix$
 #let iprod(v0, v1) = $lr(chevron #v0, #v1 chevron.r)$
+
+#let arccot(x) = $upright("arccot") #space_over_6 #x$
