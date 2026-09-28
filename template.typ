@@ -116,7 +116,6 @@
 #let content_block(text_color: white, background_color, label_name, title, en: auto, content) = {
   let cur_inset = 14pt
   [
-    #v(1em)
     #block(
       fill: background_color.lighten(95%),
       stroke: 0.5pt + background_color.lighten(50%),
