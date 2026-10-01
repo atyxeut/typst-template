@@ -276,3 +276,5 @@
 #let iprod(v0, v1) = $lr(chevron #v0, #v1 chevron.r)$
 
 #let arccot(x) = $upright("arccot") #space_over_6 #x$
+#let arcsec(x) = $upright("arcsec") #space_over_6 #x$
+#let arccsc(x) = $upright("arccsc") #space_over_6 #x$
