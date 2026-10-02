@@ -275,6 +275,23 @@
 #let rank(matrix) = $upright("rank") #space_over_6 #matrix$
 #let iprod(v0, v1) = $lr(chevron #v0, #v1 chevron.r)$
 
-#let arccot(x) = $upright("arccot") #space_over_6 #x$
-#let arcsec(x) = $upright("arcsec") #space_over_6 #x$
-#let arccsc(x) = $upright("arccsc") #space_over_6 #x$
+#let arccot(..x) = {
+  $upright("arccot") #if x.len() > 0 {
+    space_over_6
+    x.pos().first()
+  }$
+}
+
+#let arcsec(..x) = {
+  $upright("arcsec") #if x.len() > 0 {
+    space_over_6
+    x.pos().first()
+  }$
+}
+
+#let arccsc(..x) = {
+  $upright("arccsc") #if x.len() > 0 {
+    space_over_6
+    x.pos().first()
+  }$
+}
