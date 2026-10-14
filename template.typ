@@ -275,23 +275,19 @@
 #let rank(matrix) = $upright("rank") #space_over_6 #matrix$
 #let iprod(v0, v1) = $lr(chevron #v0, #v1 chevron.r)$
 
-#let arccot(..x) = {
-  $upright("arccot") #if x.len() > 0 {
+#let _math_function(name, ..x) = {
+  $upright(name) #if x.len() > 0 {
     space_over_6
     x.pos().first()
   }$
 }
 
-#let arcsec(..x) = {
-  $upright("arcsec") #if x.len() > 0 {
-    space_over_6
-    x.pos().first()
-  }$
-}
-
-#let arccsc(..x) = {
-  $upright("arccsc") #if x.len() > 0 {
-    space_over_6
-    x.pos().first()
-  }$
-}
+#let arccsc(..x) = _math_function("arccsc", ..x)
+#let arcsec(..x) = _math_function("arcsec", ..x)
+#let arccot(..x) = _math_function("arccot", ..x)
+#let arsinh(..x) = _math_function("arsinh", ..x)
+#let arcosh(..x) = _math_function("arcosh", ..x)
+#let artanh(..x) = _math_function("artanh", ..x)
+#let arcsch(..x) = _math_function("arcsch", ..x)
+#let arsech(..x) = _math_function("arsech", ..x)
+#let arcoth(..x) = _math_function("arcoth", ..x)
