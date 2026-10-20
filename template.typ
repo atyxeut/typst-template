@@ -271,17 +271,21 @@
 #let eulerian(n, k) = $vec(#n, #k, delim: chevron)$
 #let multinom(n, ..k) = $binom(#n, #k.pos().join("," + space_over_4))$
 
-#let span(..vectors) = $upright("span")(#vectors.pos().join("," + space_over_4))$
-#let nullspace(f) = $upright("null") #space_over_6 #f$
-#let rangespace(f) = $upright("range") #space_over_6 #f$
-#let rank(matrix) = $upright("rank") #space_over_6 #matrix$
-#let iprod(v0, v1) = $lr(chevron #v0, #v1 chevron.r)$
+#let _math_function(brace: false, name, ..x) = {
+  let content = (
+    if x.len() == 1 {
+      space_over_6
+      x.pos().first()
+    } else if x.len() > 1 {
+      x.pos().join("," + space_over_6)
+    }
+  )
 
-#let _math_function(name, ..x) = {
-  $upright(name) #if x.len() > 0 {
-    space_over_6
-    x.pos().first()
-  }$
+  if brace {
+    $upright(name)(content)$
+  } else {
+    $upright(name) content$
+  }
 }
 
 #let arccsc(..x) = _math_function("arccsc", ..x)
@@ -293,3 +297,11 @@
 #let arcsch(..x) = _math_function("arcsch", ..x)
 #let arsech(..x) = _math_function("arsech", ..x)
 #let arcoth(..x) = _math_function("arcoth", ..x)
+
+#let span(..vectors) = _math_function(brace: true, "span", ..vectors)
+#let nullspace(map) = _math_function("null", map)
+#let rangespace(map) = _math_function("range", map)
+#let rank(matrix) = _math_function("rank", matrix)
+#let diag(..elements) = _math_function(brace: true, "diag", ..elements)
+
+#let iprod(v0, v1) = $lr(chevron #v0, #v1 chevron.r)$
