@@ -71,6 +71,7 @@
   }
   show math.frac: math.display
   set math.cases(gap: char_width_over_2)
+  set math.mat(gap: char_width_over_2)
 
   let code_font_size_factor = 0.75
   show raw: set text(
